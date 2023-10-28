@@ -9,7 +9,7 @@ require (
 	github.com/sarulabs/di v2.0.0+incompatible
 	github.com/stretchr/testify v1.4.0 // indirect
 	golang.org/x/sync v0.0.0-20190423024810-112230192c58 // indirect
-	golang.org/x/sys v0.0.0-20180816055513-1c9583448a9c // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	golang.org/x/text v0.3.1-0.20180810153555-6e3c4e7365dd // indirect
 	google.golang.org/grpc v1.2.1-0.20180815223229-9907ae0e57ce
 )
