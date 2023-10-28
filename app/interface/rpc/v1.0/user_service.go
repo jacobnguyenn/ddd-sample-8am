@@ -20,6 +20,19 @@ func NewUserService(userUsecase usecase.UserUsecase) *userService {
 	}
 }
 
+// Handler here should only:
+// - do validation so that usecase can receive the correct input
+// - do post request processing (sanitize, etc..) and return response to caller
+
+// Should deletegate actual work to ITicketUseCase.CreateTicket(ctx, &usecase.Ticket{})
+// ticketUseCase will do business logics by calling:
+//   - domain.TicketService concrete struct
+//   - domain.TicketRepository interface
+//
+// TicketRepository is the interface to persistent layer implementations, concrete implementation
+// will be injected later by DI container
+// TicketService include simple business logic related to domain models like: not allow duplicated domain ticket id, not allowing start time > end time, ..
+
 func (s *userService) ListUser(ctx context.Context, in *protocol.ListUserRequestType) (*protocol.ListUserResponseType, error) {
 	users, err := s.userUsecase.ListUser()
 	if err != nil {
