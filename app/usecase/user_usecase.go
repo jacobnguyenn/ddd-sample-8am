@@ -7,13 +7,20 @@ import (
 	"github.com/hatajoe/8am/app/domain/service"
 )
 
+/*
+*
+Why is it an interface? This is because use case is used from interface layer — the green layer. We should always define interface if we are going to through between layers.
+*/
 type UserUsecase interface {
 	ListUser() ([]*User, error)
 	RegisterUser(email string) error
 }
 
 type userUsecase struct {
-	repo    repository.UserRepository
+	repo repository.UserRepository
+	/**
+	This is because that this service depends no other layers
+	*/
 	service *service.UserService
 }
 
