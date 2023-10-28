@@ -11,6 +11,9 @@ type userService struct {
 	userUsecase usecase.UserUsecase
 }
 
+// Verify interface compliance
+var _ protocol.UserServiceServer = (*userService)(nil)
+
 func NewUserService(userUsecase usecase.UserUsecase) *userService {
 	return &userService{
 		userUsecase: userUsecase,

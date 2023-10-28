@@ -6,6 +6,10 @@ import (
 	"github.com/hatajoe/8am/app/domain/repository"
 )
 
+/*
+*
+The service layer is gathered business logic that should not be included in the model
+*/
 type UserService struct {
 	repo repository.UserRepository
 }
