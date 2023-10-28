@@ -1,5 +1,6 @@
 
 This is sample project using gRPC with DDD architecture.
+Sample as original repo but comment included, for learning purpose only.
 
 # prerequisites
 
@@ -20,4 +21,3 @@ This is sample project using gRPC with DDD architecture.
 ```
 % make grpcc
 ```
-
